@@ -1,4 +1,4 @@
-//quick and easy way to repeat something. There are 3 main parts:
+//quick and easy way to repeat something. Loops through a block of code a number of times. There are 3 main parts:
 
  let i = 7;
 

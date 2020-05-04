@@ -1,4 +1,4 @@
-//for of loops are used on elements of indices. numbers. grabs values (better for arrays)
+//for of loops are used on elements of indices. numbers. grabs values (better for arrays) iterable
 
  let student = {
 //  keys    values

@@ -21,7 +21,7 @@ console.log(undef, correct);
 let degrees = 90;
 console.log(degrees);
 
-let precise = 999999999999999
+let precise = 999999999999999 //15- 9's
 console.log(precise);
 
 let rounded = 9999999999999999; //at 16 chars numbers will auto round
@@ -44,13 +44,13 @@ let first = 1050 + 100;
 let second = "1050" + "100";
 console.log(first);
 console.log(second); //when strings are added together, they just get mushed together
-console.log(typeof first);
+console.log(typeof first); //typeof gives us the data type
 
 let third = 1050 + "100";
 console.log(third);
 console.log(typeof third);
 
-//Objects - objects are used to store many values instead of a singular value {}
+//Objects - objects are used to store many values instead of a singular value using: {}
 
 let frodo = { //used rather than creating seperate variables
     race: "hobbit", 
@@ -60,7 +60,7 @@ let frodo = { //used rather than creating seperate variables
 
 console.log(frodo);
 
-//Arrays - containers that hold lists of items
+//Arrays - containers that hold lists of items using: []
 /*
     let list = [    "item1",    "item2",    "item3"];
         (1)    (2)        (3)
@@ -84,7 +84,7 @@ let state = "IN";
 let zipcode = 46077;
 
 console.log(firstName + " " + lastName + "," + houseNumber + " " + street + " " + city + "," + state + " " + zipcode);
-console.log(`${firstName} ${lastName}, ${houseNumber} `)
+console.log(`${firstName} ${lastName}, ${houseNumber} `) //${is used to call keys} always use back ticks ``
 
 let myName = "Mikaela";
 console.log(myName.length); //spaces count as character numbers

@@ -24,3 +24,31 @@ movies.push("Friends With Benefits");
 movies.splice(3, "It");
 
 movies.forEach((movie, i) => console.log(i, movie));
+
+let movie = {
+    nameOfMovie: "Home Alone",
+    runTime: 103,
+    characters: [
+      {
+        name: "Kevin",
+        age: 8,
+        items: [
+          {
+            itemOne: "BB Gun",
+            itemTwo: "Hot Iron",
+          }]
+      },
+          {
+        name: "Harry",
+        age: 40,
+        items: [
+          {
+            itemOne: "Gun",
+            itemTwo: "Crowbar",
+          }
+        ]
+      },
+  ]
+  };    
+
+  console.log(movie.characters);

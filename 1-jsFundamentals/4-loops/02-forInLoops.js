@@ -1,7 +1,7 @@
-//runs keys in an object. only iterates over enumerable, non-Symbol properties. (better for objects)
+//runs keys in an object. only iterates over ENUMERABLE, non-Symbol properties. (better for objects)
 
 let student = {
-    name: "Parker",
+    name: "Peter",
     awesome: true,
     degree: "Javascript",
     week: 1

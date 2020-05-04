@@ -18,7 +18,7 @@ let a = 2;
         -numbers may follow the above characters, num cannot come first.
         -javascript is case sensitive - 'hello' and 'Hello' are different variables.
         -no spaces are allowed in variable names.
-        -cameCase is the best practice for naming variables.
+        -camelCase is the best practice for naming variables.
             camelCase, snake-case, PascalCase
 */
 
@@ -38,7 +38,7 @@ const e = 3; //value must remain constant
 let x = 20;
 console.log(x)
 
-x =10;
+x = 10;
 console.log(x);
 
 x = 33;
