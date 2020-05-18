@@ -12,8 +12,7 @@ function fetchSpace(e) { //fetch returns a promise
         .then(data => data.json()) //the callback to execute when the promise is resolved
         .then(json => displayRockets(json)) //call the function to display the data
         .catch(err => console.log(err)); //the callback to execute if the promise is rejected or fail
-
-        //code here
+        
     }
 
     function displayRockets(rockets) {
