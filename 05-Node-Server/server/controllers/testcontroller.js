@@ -1,33 +1,98 @@
-var express = require('express'); //1  import the express framework inside variable express
-var router = express.Router(); //2 create a variable called router, we are using the express variable to access the Router() method.
+var express = require('express') //1  import the express framework inside variable express
+var router = express.Router() //2 create a variable called router, we are using the express variable to access the Router() method.
+var sequelize = require('../db');
+var TestModel = sequelize.import('../models/test');
 
-//3    //4  //5 path         //6 callback function
-router.get('/', function (req, res) {
-    //7
-    res.send('Hey!!! This is a test route!');
+// controller method 1: Simple request
+router.post('/one', function(req, res){
+    res.send("Got a post request.")
 });
 
-router.get('/about', function (req, res) {
-    res.send('This is an about route!');
+// controller method 2: Persisting Data
+router.post('/two', function (req, res){
+    let testData = "Test data for endpoint two";
+
+    TestModel
+    .create({
+        testdata: testData
+    }) .then(dataFromDatabase => {
+        res.send("Test two went through!")
+    })
 });
 
-// pass in an object
-router.get('/contact', function (req, res) {
-    res.send({user: "Mikaela", email: "mikaela.wade@gmail.com"});
+// ROUTE 3: 
+router.post('/three', function (req, res) {
+    var testData = req.body.testdata.item;
+
+    TestModel
+    .create({
+        testdata: testData
+    })
+    res.send('Test three went through!')
+    console.log('Test three went through!')
 });
 
-// pass in an array
-router.get('/projects', function (req, res) {
-    res.send(["project1", "project2", "project3"]);
+// ROUTE 4: 
+router.post('/four', function (req, res) {
+    var testData = req.body.testdata.item;
+    TestModel
+    .create({
+        testdata: testData
+    })
+    .then(
+        function message() {
+            res.send('Test 4 went through!');
+        }
+    );
 });
 
-// pass in an array of objects
-router.get('/mycontacts', function (req, res) {
-    res.send([
-        {user: "tom", email: "tom@gmail.com"}, 
-        {user: "sharon", email: "sharon2@hotmail.com"}, 
-        {user: "aaron", email: "aaron457@gmail.com"}
-    ]);
+// ROUTE 5: return data in a Promise
+router.post('/five', function (req, res) {
+    var testData = req.body.testdata.item;
+    TestModel
+    .create({
+        testdata: testData
+    })
+    .then(
+        function message(data) {
+            res.send(data);
+        }
+    );
 });
-//8
+
+// ROUTE 6: return response as JSON
+router.post('/six', function (req, res) {
+    var testData = req.body.testdata.item;
+    TestModel
+    .create({
+        testdata: testData
+    })
+    .then(
+        function message(testdata) {
+            res.json({
+                testdata: testdata
+            });
+        }
+    );
+});
+
+// ROUTE 7: Handle errors
+router.post('/seven', function (req, res) {
+    var testData = req.body.testdata.item;
+    TestModel
+    .create({
+        testdata: testData
+    })
+    .then(
+        function createSuccess(testdata){
+            res.json({
+                testdata: testdata
+            });
+        },
+        function createError(err) {
+            res.send(500, err.message);
+        }
+    );
+});
+
 module.exports = router;

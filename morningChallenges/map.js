@@ -1,5 +1,3 @@
-// Challenge: write a function that uses the Array.prototype.forEach() & the Array.prototype.push() methods within it. Using the forEach method, loop over all of the presidents from our presidents array. Then, push the president's last name and the year they were born to a new array as individual objects containing key/value pairs of each presidents last name and date of birth. Then, return the new array from the function.
-
 const presidents = [
     { first: 'George', last: 'Washington', year: 1732, passed: 1799 },
     { first: 'John', last: 'Adams', year: 1735, passed: 1826 },
@@ -47,26 +45,20 @@ const presidents = [
     { first: 'Donald', last: 'Trump', year: 1946, passed: undefined },
   ];
 
-// presidents.forEach(element => console.log(element));
-// element.push(last, year);
+  // Challenge: using Array.prototype.map(), console.log the first and last names of each president from the given 'presidents' array.
 
-let fn = () => {
-   let copy = [];
-   
-    presidents.forEach(president => {
-        copy.push({
-            last: president.last,
-            yearBorn: president.year
-        })
-    })
-    return copy
-}
+// function fullName(presidents) {
+//     var fullname = [presidents.first, presidents.last].join(" ");
+//     return fullname;
+//     presidents.map(fullName);
+// }
+// console.log(presidents);
 
-let newPresArray = fn();
-console.log(newPresArray);
+// let newArray = presidents.map (obj => {
+//     let rObj = {}
+//     rObj[obj.first + " " + obj.last] = obj.presidents
+//     return rObj;
+// });
+// console.log(newArray);
 
-
-// let copy = [];
-// let fn = () => presidents.forEach(pres => copy.push({last: pres.last, yearBorn: pres.year}))
-// fn();
-// console.log(copy);
+presidents.map(president => console.log(president.first, president.last));
