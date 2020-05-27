@@ -2,16 +2,23 @@ import React, {useState} from 'react';
 import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
+import Auth from './components/Auth/Auth';
 
 function App() {
 
-  const [sessionToken, setSessionToken] = useState(undefined);
+  const [sessionToken, setSessionToken] = useState(5);
+
+  let string = 'this is a string'
+  let number = 4
+  let obj = {
+    test: 'test'
+  }
 
   return (
     <div className="App">
-       <Navbar />
-      <p>This is a test of React!</p>
-     </div>
+      <Navbar token={sessionToken} string={string} num={number} object={obj} />
+      <Auth />
+    </div>
   );
 }
 
