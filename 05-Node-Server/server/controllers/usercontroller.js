@@ -43,7 +43,7 @@ router.post('/signin', function (req, res) {
                             sessionToken: token
                         });
                     } else {
-                        res.status(502).send({error: "you failed, yo"});
+                        res.status(502).send({error: "failed"});
                     }
                 });
             } else {
@@ -51,7 +51,7 @@ router.post('/signin', function (req, res) {
             }
         },
         function(err) {
-            res.status(501).send({error: "you failed, yo"});
+            res.status(501).send({error: "failed"});
         }
     );
 });

@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 var express = require('express'); //1 express npm package
-var express = require('express');
 var app = express(); //2 create an instance of express, allows us to create express app
 var test = require('./controllers/testcontroller') //1 import the route object in a variable called test
 var authTest = require('./controllers/authtestcontroller');
