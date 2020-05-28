@@ -3,10 +3,11 @@ import './App.css';
 
 import Navbar from './components/Navbar/Navbar';
 import Auth from './components/Auth/Auth';
+import Pies from './components/Pies/Pies';
 
 function App() {
 
-  const [sessionToken, setSessionToken] = useState(5);
+  const [sessionToken, setSessionToken] = useState(undefined);
 
   let string = 'this is a string'
   let number = 4
@@ -14,10 +15,15 @@ function App() {
     test: 'test'
   }
 
+  // verifies token - should show Auth when undefined
+  const viewConductor = () => {
+    return sessionToken !== undefined ? <Pies/> : <Auth/>
+  }
+
   return (
     <div className="App">
       <Navbar token={sessionToken} string={string} num={number} object={obj} />
-      <Auth />
+      {viewConductor()}
     </div>
   );
 }
