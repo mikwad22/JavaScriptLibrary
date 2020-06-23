@@ -1,6 +1,7 @@
 //functional component - take the results and nicely render them.
-import React from 'react';
+import React from 'react'; // import react from react
 
+// create NytResults component and passing in props as parameter
 const NytResults = (props) => {
     return (
         <div>
